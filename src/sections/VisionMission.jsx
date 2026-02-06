@@ -8,7 +8,7 @@ return (
 <div>
 <h3 className="text-3xl font-serif text-brand-primary">Vision</h3>
 <p className="mt-4 text-brand-muted">
-To build a powerful technology and talent ecosystem connecting emerging technologies with future-ready professionals.
+To be a globally trusted business & recruitment solutions brand, enabling organizations to build powerful indentities, innovative products and high-performing teams.
 </p>
 </div>
 </Reveal>
@@ -16,7 +16,7 @@ To build a powerful technology and talent ecosystem connecting emerging technolo
 <div>
 <h3 className="text-3xl font-serif text-brand-primary">Mission</h3>
 <p className="mt-4 text-brand-muted">
-To develop career-ready professionals through expert-led training, real-world projects, and trusted placement pathways.
+To deliver integrated manpower , branding , technology , marketing , talent and strategy solutions that help business adapt , scale and lead in a competetive digital world. 
 </p>
 </div>
 </Reveal>

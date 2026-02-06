@@ -3,13 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center px-6">
-      {/* <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 to-transparent"
-        initial={{ opacity: 0.3 }}
-        animate={{ opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      /> */}
+    <section className="relative min-h-screen flex items-center px-6" id="hero">
       <motion.div
   animate={{
     scale: [1, 1.2, 1],
@@ -34,8 +28,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg text-brand-muted">
-          Enterprise IT solutions, business consulting, and job-oriented training
-          programs backed by real-world placements since 2004.
+        Voople.in is a diversed business solutions brand, crafted with a strong foundation in branding and strategies growth. Established in 2015, voople has evolved into a multi-domain organization delivering integrated services across branding,software develoment, digital marketing, manpower consulting ,business strategy. We partner with startups, SMES,colleges and enterprises to build strong brands , scalable digital products and efficient teams that drive long-term success.
         </p>
 
         <div className="mt-10 flex gap-4">

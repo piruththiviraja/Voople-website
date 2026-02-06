@@ -1,9 +1,4 @@
-/* #root {
-  max-width: auto;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
+
 
 .logo {
   height: 6em;
@@ -18,14 +13,23 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes logo-float {
+  0% {
+    transform: translateY(0px) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
   }
 }
+
+.logo-float {
+  animation: logo-float 12s ease-in-out infinite;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.25));
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -40,3 +44,6 @@
 .read-the-docs {
   color: #888;
 }
+
+
+

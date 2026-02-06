@@ -64,9 +64,11 @@
 import { motion } from "framer-motion";
 
 const services = [
-  { title: 'Software Development', desc: 'Secure, scalable software and cloud solutions.' },
-  { title: 'Business & IT Consulting', desc: 'Strategic guidance for digital transformation.' },
-  { title: 'Training & Placements', desc: 'Industry-aligned training with real-time projects.' }
+  { title: 'Software Development', desc: 'Custom web & application development, enterprise software solutions, product designs & system architechture , scalable , secure and future-ready development.' },
+  { title: 'Branding and creative solutions', desc: 'Brand identity and positioning , corporate branding & visual design , brand communication & story telling , rebranding & brand transformation' },
+  { title: 'Digital Marketing', desc: 'Performance marketing & lead generation SEO,SEM & social media marketing content strategy & brand campaigns analytics-driven growth optimization.' },
+  {title:'Man Power Consulting',desc : 'IT & NON-IT staffing solutions contract , permanent & project-based hiring talent evaluation & workforce planning industry-ready resource development.s'},
+  {title:'Strategy & Consulting',desc:'Business growth & market entry strategies digital transformation consulting process optimization & operqational strategy , brand and technology roadmaps.'}
 ];
 
 // 1. Parent Animation Logic
@@ -92,7 +94,7 @@ const cardVariants = {
 
 export default function Services() {
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto">
+    <section className="py-24 px-6 max-w-6xl mx-auto" id="services">
       <motion.h2 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

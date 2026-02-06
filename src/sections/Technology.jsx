@@ -2,7 +2,7 @@ import Reveal from "../components/animation/Reveal";
 
 export default function Technology() {
 return (
-<section className="py-24 px-6 bg-brand-surface">
+<section className="py-24 px-6 bg-brand-surface" id="technology">
 <Reveal>
 <h2 className="text-4xl font-serif mb-6">Technology Solutions</h2>
 <p className="max-w-3xl text-brand-muted">
