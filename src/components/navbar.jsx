@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import "./navbar.css";
+
 const navItems = [
   { label: "Home", id: "hero" },
   { label: "Who We Are", id: "who-we-are" },
   { label: "Services", id: "services" },
   { label: "Technology", id: "technology" },
   { label: "Training", id: "training" },
-  {label: "About Us",id:"about-us"},
+  { label: "About Us", id: "about-us" },
   { label: "Contact", id: "contact" },
-  
 ];
 
 export default function Navbar() {
@@ -26,53 +26,58 @@ export default function Navbar() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
-    setOpen(false); // close mobile menu after click
+    setOpen(false);
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all ${
-        scrolled
-          ? "bg-brand-dark/90 backdrop-blur border-b border-white/10"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300
+        border-b border-white/10
+        ${scrolled
+          ? "bg-brand-dark/90 backdrop-blur"
+          : "bg-transparent border-transparent"}
+      `}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <div
-        className="navbar-logo-jpeg"
-        onClick={() => scrollToSection("hero")}
-      >
-        <img src="/logo.jpeg" alt="Vooplein logo" />
-      </div>
 
+      {/* FIXED HEIGHT + SAFE PADDING WRAPPER */}
+      <nav className="mx-auto max-w-7xl h-[80px]">
+        <div className="flex h-full items-center justify-between px-6">
+          
+          {/* Logo */}
+          <div
+            className="navbar-logo-jpeg"
+            onClick={() => scrollToSection("hero")}
+          >
+            <img src="/logo.jpeg" alt="Vooplein logo" />
+          </div>
 
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
+            {navItems.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="cursor-pointer text-brand-text/80 hover:text-brand-primary transition"
+              >
+                {item.label}
+              </li>
+            ))}
+          </ul>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {navItems.map((item) => (
-            <li
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="cursor-pointer text-brand-text/80 hover:text-brand-primary transition"
-            >
-              {item.label}
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Toggle (text only) */}
-        <button
-          className="md:hidden text-sm font-medium text-brand-text"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden text-sm font-medium text-brand-text"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? "Close" : "Menu"}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-brand-dark/95 backdrop-blur border-t border-white/10">
-          <ul className="flex flex-col px-6 py-4 space-y-4 text-sm">
+          <ul className="flex flex-col px-6 py-6 space-y-4 text-sm">
             {navItems.map((item) => (
               <li
                 key={item.id}

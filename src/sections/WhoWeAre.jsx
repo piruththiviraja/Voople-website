@@ -8,10 +8,7 @@ return (
     <div className="div-1-who-we-are">
       <h2 className="text-4xl font-serif mb-6 text-red-600">Who We Are</h2>
       <p className="text-brand-muted max-w-3xl">
-        We are a technology-driven organization delivering enterprise-grade
-        software solutions and development (CRM), strategic IT consulting,
-        and real-time, job-oriented training programs that connect talent
-        with industry needs.
+        Voople.in is a diversified business solutions brand, crafted with a strong foundation in branding and strategic growth. Established in 2015, Voople has evolved into a multi-domain organization delivering integrated services across branding, software development, digital marketing, manpower consulting, and business strategy.
       </p>
     </div>
 
