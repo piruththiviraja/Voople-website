@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 export default function Hero() {
   return (
@@ -35,9 +37,11 @@ export default function Hero() {
           <button className="bg-brand-primary px-8 py-4 rounded-lg font-semibold">
             Partner With Us
           </button>
-          <button className="border border-brand-steel px-8 py-4 rounded-lg">
-            Start Your Career
-          </button>
+          <Link to ="/hotjobs">
+            <button className="border border-brand-steel px-8 py-4 rounded-lg">
+              Start Your Career
+            </button>
+          </Link>
         </div>
       </div>
     </section>

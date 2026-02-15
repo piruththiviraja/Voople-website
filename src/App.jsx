@@ -11,7 +11,9 @@ import Contact from './sections/Contact'
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/navbar";
 import Aboutus from "./sections/Aboutus";
+import HotJobsPage from "./pages/hotjobsvoople"
 import "./App.css";
+import { Routes ,Route} from "react-router-dom";
 
 export default function App() {
   const { scrollYProgress } = useScroll();
@@ -42,17 +44,26 @@ export default function App() {
         
       <main className="relative z-10 w-full">
         <Navbar />
-        <Hero />
-        <WhoWeAre />
-        <VisionMission />
-        <Services />
-        <Technology />
-        <Training />
-        <Expertise />
-        <Impact />
-        <Aboutus />
-        <Contact />
+        <Routes>
+          <Route path='/' element={
+            <>
+              <Hero />
+              <WhoWeAre />
+              <VisionMission />
+              <Services />
+              <Technology />
+              <Training />
+              <Expertise />
+              <Impact />
+              <Aboutus />
+              <Contact />
+            </>
+          }/>
+          <Route path='/hotjobs' element={<HotJobsPage/>}/>
+
+        </Routes>
         <Footer />
+
       </main>
 
     </div>
