@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { supabase } from "../supabase";
+import { useNavigate } from "react-router-dom";
 
 export default function HotJobsPage() {
+  const navigate = useNavigate();
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,11 +59,13 @@ const handleSubmit = async (e) => {
 
     if (insertError) throw insertError;
 
-    alert("Application submitted successfully!");
+    setShowSuccess(true);
+
   } catch (error) {
     console.error(error);
     alert("Something went wrong!");
   }
+  
 };
 
 
@@ -132,6 +138,33 @@ const handleSubmit = async (e) => {
 
         </form>
       </div>
+
+            {showSuccess && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 w-[90%] max-w-md text-center shadow-2xl animate-fadeIn">
+
+            <h3 className="text-2xl font-bold mb-4 text-brand-primary">
+              Application Submitted 🎉
+            </h3>
+
+            <p className="text-brand-text/80 mb-6">
+              Thank you for applying. Our team will review your profile and contact you soon.
+            </p>
+
+            <button
+              onClick={() => {
+                setShowSuccess(false);
+                navigate("/");
+              }}
+              className="px-6 py-2 rounded-lg bg-brand-primary font-semibold hover:opacity-90 transition"
+            >
+              OK
+            </button>
+
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

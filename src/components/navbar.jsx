@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./navbar.css";
 
 const navItems = [
@@ -15,18 +16,29 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleNavClick = (id) => {
     setOpen(false);
+
+    // If not on home page, navigate first
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -46,7 +58,7 @@ export default function Navbar() {
           {/* Logo */}
           <div
             className="navbar-logo-jpeg"
-            onClick={() => scrollToSection("hero")}
+            onClick={() => handleNavClick("hero")}
           >
             <img src="/logo.jpeg" alt="Vooplein logo" />
           </div>
@@ -56,7 +68,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className="cursor-pointer text-brand-text/80 hover:text-brand-primary transition"
               >
                 {item.label}
@@ -81,7 +93,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className="cursor-pointer text-brand-text/80 hover:text-brand-primary transition"
               >
                 {item.label}
